@@ -88,6 +88,9 @@ angular.module('ng-sortable', [])
 					onAdd: function (evt) {
 						_sync(evt);
 						options.onAdd(source.items(), removed);
+						evt.preventDefault();
+						evt.stopPropagation();
+						evt.stopImmediatePropagation();
 					},
 					onUpdate: function (evt) {
 						_sync(evt);
