@@ -95,6 +95,9 @@ angular.module('ng-sortable', [])
 					onUpdate: function (evt) {
 						_sync(evt);
 						options.onUpdate(source.items(), source.item(evt.item));
+						evt.preventDefault();
+						evt.stopPropagation();
+						evt.stopImmediatePropagation();
 					},
 					onRemove: function () {
 						options.onRemove(source.items(), removed);
