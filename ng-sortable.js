@@ -79,11 +79,11 @@ angular.module('ng-sortable', [])
 					opts[name] = opts[name] || options[name];
 					return opts;
 				}, {
-					onStart: function () {
-						options.onStart(source.items());
+					onStart: function (evt) {
+						options.onStart(source.items(), evt);
 					},
-					onEnd: function () {
-						options.onEnd(source.items());
+					onEnd: function (evt) {
+						options.onEnd(source.items(), evt);
 					},
 					onAdd: function (evt) {
 						_sync(evt);
